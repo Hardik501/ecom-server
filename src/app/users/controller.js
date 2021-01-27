@@ -84,7 +84,8 @@ exports.create = async (req, res) => {
 };
 
 exports.login = (req, res) => {
-    Users.findOne({email: req.body.email, isActive: true})
+    console.log(req)
+    Users.findOne({email: req.body.email})
         .then(login => {
             const success = "Successfully Login";
             const isMatch = bcrypt.compareSync(req.body.password, login.password); // true

@@ -4,18 +4,23 @@ const bodyParser = require( "body-parser" );
 const config = require( "./src/config" );
 const customResponses = require( "./src/middlewares/customResponses" );
 const logger = require( "./src/utilities/logger" );
+const cors =  require('cors');
+
+
 
 const app = express( );
 const port = process.env.PORT || config.port;
 const ENV = process.env.NODE_ENV || config.env;
 
 app.set( "env", ENV );
-
+app.use(cors());
 app.use( bodyParser.json( ) );
 app.use( customResponses );
 
 require( "./src/config/mongoose" )( app );
 require( "./src/app" )( app );
+
+app.use('/', require('./src/app/index'))
 
 app.use( ( req, res ) => {
     res.notFound( );

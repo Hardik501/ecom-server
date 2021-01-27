@@ -2,7 +2,7 @@ const controller = require( "./controller" );
 
 const express = require( "express" );
 
-const router = express.Router( );
+const router = express.Router();
 
 /**
 *    @apiGroup User

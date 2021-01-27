@@ -29,7 +29,7 @@ const router = express.Router( );
 *           }
 *      }
 */
-router.post( "/registration", controller.register );
+//router.post( "/registration", controller.register );
 
 /**
 *    @apiGroup User

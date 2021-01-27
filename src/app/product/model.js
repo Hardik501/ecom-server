@@ -7,7 +7,7 @@ const productSchema = new Schema( {
     description:{type:String,required:true},
     price: { type: String, required: true },
     information: { type: Object, required: true }, //bottom section after add to cart create object of it and save it here
-    isActive: { type: Boolean, required: true },
+    image : { type: String }
 }, {
     timestamps: true,
 } );
