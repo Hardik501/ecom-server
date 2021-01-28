@@ -84,7 +84,6 @@ exports.create = async (req, res) => {
 };
 
 exports.login = (req, res) => {
-    console.log(req)
     Users.findOne({email: req.body.email})
         .then(login => {
             const success = "Successfully Login";
